@@ -67,6 +67,24 @@ function callBtn(id1,id2){
 
 }
 
+// copy button
+function copyBtn(id){
+    const copyText = parseInt(document.getElementById("total-copy").innerText);
+    const number = document.getElementById(id).innerText;
+
+    navigator.clipboard.writeText(number).then(() => {
+        alert(`Successfully copied: ${number}`);
+    }).catch(err => {
+        console.error("Failed to copy: ", err);
+    });
+
+    let copy = copyText;
+    copy += 1;
+    const totalCopy =  document.getElementById("total-copy");
+    totalCopy.innerText = copy;
+    return copy;
+}
+
 
 // heart icon functionality
 document.getElementById("heart-icon-1").addEventListener("click", function(e){
@@ -171,25 +189,66 @@ document.getElementById("call-button-9").addEventListener("click", function(e){
     
 })
 
+//copy button functionality
+
+document.getElementById("copy-1").addEventListener("click", function(e){
+    e.preventDefault();
+    copyBtn("number1");
+    
+})
+document.getElementById("copy-2").addEventListener("click", function(e){
+    e.preventDefault();
+    copyBtn("number2");
+    
+})
+document.getElementById("copy-3").addEventListener("click", function(e){
+    e.preventDefault();
+    copyBtn("number3");
+    
+})
+document.getElementById("copy-4").addEventListener("click", function(e){
+    e.preventDefault();
+    copyBtn("number4");
+    
+})
+document.getElementById("copy-5").addEventListener("click", function(e){
+    e.preventDefault();
+    copyBtn("number5");
+    
+})
+document.getElementById("copy-6").addEventListener("click", function(e){
+    e.preventDefault();
+    copyBtn("number6");
+    
+})
+document.getElementById("copy-7").addEventListener("click", function(e){
+    e.preventDefault();
+    copyBtn("number7");
+    
+})
+document.getElementById("copy-8").addEventListener("click", function(e){
+    e.preventDefault();
+    copyBtn("number8");
+    
+})
+document.getElementById("copy-9").addEventListener("click", function(e){
+    e.preventDefault();
+    copyBtn("number9");
+    
+})
+
+
+
+
+// clear button functionality
+document.getElementById("clear-btn").addEventListener("click", function(e){
+    e.preventDefault();
+    const historyContainer = document.getElementById("history-container")
+    historyContainer.innerText = "";
+    
+})
 
 
 
 
 
-
-
-
-
-// const newCart = document.createElement("div")
-//         newCart.innerHTML = `
-//           <div class="flex justify-center items-center bg-gray-200 rounded-xl">
-//                 <img
-//                   src="./assets/kitchen-1.png" alt="" class="h-[80px] pl-1"/>
-//                 <div class="card-body items-center text-center">
-//                   <h1 class="font-bold">${title}</h1>
-//                   <p class="text-gray-400 font-medium">${price} TK</p>
-//                 </div>
-//               </div>
-//             `
-
-//             cartContainer.appendChild(newCart)
