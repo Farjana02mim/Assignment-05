@@ -45,7 +45,7 @@ function callBtn(id1,id2){
     for(const item of historyData){
         const div = document.createElement("div")
         div.innerHTML = `
-            <div class="flex justify-between items-center bg-gray-200 rounded-xl p-4 mt-4">
+            <div class="flex justify-between items-center bg-gray-200 rounded-xl p-1 md:p-4 mt-4">
                 
                 <div class="items-center">
                   <h1 class="font-bold">${item.name}</h1>
